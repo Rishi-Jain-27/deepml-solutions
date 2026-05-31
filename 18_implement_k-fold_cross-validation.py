@@ -30,7 +30,7 @@ def k_fold_cross_validation(n_samples: int, k: int = 5, shuffle: bool = True) ->
     result = []
     test_list = indices
     train_list = indices
-    
+
     # Iterate through len(fold_sizes) number of times
     for i in range(len(fold_sizes)):
         # the test fold is the first fold_sizes[i] indices
@@ -46,4 +46,3 @@ def k_fold_cross_validation(n_samples: int, k: int = 5, shuffle: bool = True) ->
         result.append((train_fold, test_fold))
      
     return result
-
