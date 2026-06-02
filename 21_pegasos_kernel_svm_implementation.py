@@ -50,7 +50,7 @@ def pegasos_kernel_svm(data: torch.Tensor, labels: torch.Tensor, kernel: str = '
                 if kernel == 'linear':
                     decision_value += (alphas[j] * y_j * (torch.dot(x_j, x_i)))
                 elif kernel == 'rbf':
-                    kernel_val = torch.exp(-1 * torch.linalg.norm(x_j - x_i)/(2 * (sigma**2)))
+                    kernel_val = torch.exp(-torch.sum((x_j - x_i) ** 2)/(2 * (sigma**2)))
                     decision_value += (alphas[j] * y_j * (kernel_val))
             
             decision_value += bias
