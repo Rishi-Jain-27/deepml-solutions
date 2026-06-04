@@ -10,4 +10,4 @@ def transpose_matrix(a) -> torch.Tensor:
     Returns:
         A transposed torch.Tensor
     """
-    return torch.as_tensor(a).T
+    return torch.tensor(a).T
